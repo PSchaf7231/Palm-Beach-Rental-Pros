@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { tanstackRouterVite } from "@tanstack/router-plugin/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
   plugins: [
     react(),
-    tanstackRouterVite(),
+    TanStackRouterVite(),
     componentTagger(),
   ],
   resolve: {
@@ -15,7 +15,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // This is the part that fixes the Nitro/Vercel build
   ssr: {
     noExternal: true,
   },
