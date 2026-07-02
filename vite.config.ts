@@ -12,4 +12,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-});
+}); 
+vite: { plugins: [{ name: 'force-nitro', config: () => ({ ssr: { noExternal: true }, build: { rollupOptions: { external: [] } } }) }] },
